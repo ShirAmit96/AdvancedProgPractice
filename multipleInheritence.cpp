@@ -65,3 +65,31 @@ int main(){
     joe.hug(5, 7);//compilation error
     joe.Mother::hug(5, 7);// prevents compilation error
 }
+
+
+// Diamond problem:
+
+class E{
+public:
+    void f(){
+        cout<<"A::f"<<endl;
+    }
+};
+
+class F:public A{
+
+};
+
+class G:public A{
+
+};
+
+class H:public F, public G{
+
+};
+
+int main(){
+    H h;
+    h.f();// compilation error
+    
+}
