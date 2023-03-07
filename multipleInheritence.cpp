@@ -63,4 +63,5 @@ class Son: public Father, public Mother{
 int main(){
     Son joe;
     joe.hug(5, 7);//compilation error
+    joe.Mother::hug(5, 7);// prevents compilation error
 }
